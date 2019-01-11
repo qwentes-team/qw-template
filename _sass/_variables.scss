@@ -1,4 +1,12 @@
-    $qw-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    $qw-font-family: -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Helvetica,
+    Arial,
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol";
     $qw-font-size: 16px;
     $qw-font-size-small: 14px;
     $qw-line-height: 1.375em;
@@ -19,6 +27,7 @@
     $qw-border-radius-md: 8px;
     $qw-border-radius-lg: 12px;
     $qw-border-radius-xl: 16px;
+    $qw-border-radius-round: 50%;
 
     $qw-primary-dark: #414754;
     $qw-primary-medium: #565E70;
@@ -38,13 +47,50 @@
     $qw-accent-positive: #88BE78;
 
     $ag-box-shadow: 0 4px 16px rgba(0, 0, 0, .12);
-    $ag-box-shadow-hover: 0 5px 5px -3px rgba(0, 0, 0, .2), 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12);
-    $ag-box-shadow-active: 0 7px 8px -4px rgba(0, 0, 0, .2), 0 12px 17px 2px rgba(0, 0, 0, .14), 0 5px 22px 4px rgba(0, 0, 0, .12);
+    $ag-box-shadow-hover: 0 5px 5px -3px rgba(0, 0, 0, .2),
+    0 8px 10px 1px rgba(0, 0, 0, .14),
+    0 3px 14px 2px rgba(0, 0, 0, .12);
+    $ag-box-shadow-active: 0 7px 8px -4px rgba(0, 0, 0, .2),
+    0 12px 17px 2px rgba(0, 0, 0, .14),
+    0 5px 22px 4px rgba(0, 0, 0, .12);
 
     // Width of the content area
     $qw-width-full: 100%;
     $qw-width-text-block: 60%;
 
     //Media queries variables
+    $screen-xm-max: 1440px;
+    $screen-md-max: 1100px;
     $screen-sm-max: 991px;
     $screen-xs-max: 768px;
+    $screen-xxs-max: 460px;
+
+    @mixin largeDesktop {
+        @media only screen and (max-width: #{$screen-xm-max}) {
+            @content;
+        }
+    }
+
+    @mixin desktop {
+        @media only screen and (max-width: #{$screen-md-max}) {
+            @content;
+        }
+    }
+
+    @mixin tablet {
+        @media only screen and (max-width: #{$screen-sm-max}) {
+            @content;
+        }
+    }
+
+    @mixin mobile {
+        @media only screen and (max-width: #{$screen-xs-max}) {
+            @content;
+        }
+    }
+
+    @mixin smallMobile {
+        @media only screen and (max-width: #{$screen-xxs-max}) {
+            @content;
+        }
+    }

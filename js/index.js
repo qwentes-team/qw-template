@@ -1,1 +1,1 @@
-console.log('Qwentes templateasdasdf');
+console.log('Template qw');
