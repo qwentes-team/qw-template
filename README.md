@@ -1,4 +1,6 @@
-## Required:
+# qw-template
+
+## Required
 
 - Jekyll ([https://jekyllrb.com/](https://jekyllrb.com/)):
 
@@ -6,9 +8,9 @@
 $ gem install jekyll bundler
 ```
 
-- Gulp
+## Development
 
 ```
 $ npm install
-$ npm start: start project
+$ npm start
 ```
