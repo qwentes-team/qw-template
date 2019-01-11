@@ -23,10 +23,6 @@ exclude:
   - README.md
   - webpack.config.js
 
-description: Qwentès description
-
-keywords: Qwentès template
-
 
 github_username: jekyll
 
