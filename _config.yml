@@ -1,0 +1,43 @@
+---
+title: Qwentes template
+
+timezone: UTC
+
+collections:
+  posts:
+    title: Posts
+    output: true
+  uploads:
+    title: Uploads
+    output: true
+email: info@qwentes.it
+
+exclude:
+  - node_modules
+  - gulp
+  - vendor
+  - js/dev
+  - Gemfile.old
+  - Gemfile.lock.old
+  - gulpfile.js
+  - mailer.php
+  - package.json
+  - composer.json
+  - composer.lock
+  - composer.phar
+  - feed.xml
+  - config.rb
+  - README.md
+
+description: Qwentès description
+
+keywords: Qwentès template
+
+
+github_username: jekyll
+
+markdown: kramdown
+
+sass:
+  style: extended
+

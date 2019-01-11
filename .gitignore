@@ -1,0 +1,9 @@
+.DS_Store
+img/.DS_Store
+.sass-cache/
+_site/
+.jekyll-metadata
+node_modules/
+vendor/
+.idea
+package-lock.json
