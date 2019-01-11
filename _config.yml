@@ -28,6 +28,7 @@ exclude:
   - feed.xml
   - config.rb
   - README.md
+  - webpack.config.js
 
 description: Qwentès description
 
