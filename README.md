@@ -1,6 +1,6 @@
-# qw-template
+# Qwentès template
 
-## Required
+## Require
 
 - Jekyll ([https://jekyllrb.com/](https://jekyllrb.com/)):
 
