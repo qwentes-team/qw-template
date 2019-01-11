@@ -1,51 +1,36 @@
 # Basic
-
-- websiteDescription: Basic template
-
-- websiteKeywords: template, custom, basic
+website:
+  title: Qwentés Template
+  description: Basic template
+  keywords: template, custom, basic
 
 # Open Graph
-- ogUrl: https://template.it/
-
-- ogType: website
-
-- ogSiteName: Qwentés template
-
-- ogTitle: Qwentés template
-
-- ogDescription: Basic template
-
-- ogImage: Url to image
-
-- ogLocale: en_US
+og: 
+  url: https://template.it/
+  type: website
+  siteName: Qwentés template
+  title: Qwentés template
+  description: Basic template
+  image: Url to image
+  locale: en_US
 
 
 # Apple touch icons 
-- appleTouchIcon57: Url to icon
-
-- appleTouchIcon60: Url to icon
-
-- appleTouchIcon72: Url to icon
-
-- appleTouchIcon76: Url to icon
-
-- appleTouchIcon114: Url to icon
-
-- appleTouchIcon120: Url to icon
-
-- appleTouchIcon152: Url to icon
-
-- appleTouchIcon180: Url to icon
-
-- webAppTitle: Qwentès Template
+appleTouch:
+  icon57: Url to icon
+  icon60: Url to icon
+  icon72: Url to icon
+  icon76: Url to icon
+  icon114: Url to icon
+  icon120: Url to icon
+  icon152: Url to icon
+  icon180: Url to icon
+webAppTitle: Qwentès Template
 
 
 #Favicon
-- favicon16: Url to favicon
-
-- favicon32: Url to favicon
-
-- favicon96: Url to favicon
-
-- favicon192: Url to favicon
+favicon16: Url to favicon
+favicon32: Url to favicon
+favicon96: Url to favicon
+favicon192: Url to favicon
 

@@ -3,35 +3,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>{{ head.websiteTitle }}</title>
-	<meta name="description" content="{{ head.websiteDescription }}">
-	<meta name="keywords" content="{{ head.websiteKeywords }}">
+    <title>{{ site.data.head.website.title }}</title>
+	<meta name="description" content="{{ site.data.head.website.description }}">
+	<meta name="keywords" content="{{ site.data.head.website.title }}">
 
 	<!-- Open Graph -->
-	<meta property="og:url" content="{{ head.ogUrl }}" />
-	<meta property="og:type" content="{{ head.ogType }}" />
-	<meta property="og:site_name" content="{{ head.ogSiteName }}" />
-	<meta property="og:title" content="{{ head.ogTitle }}" />
-	<meta property="og:description" content="{{ head.ogDescription }}" />
-	<meta property="og:image" content="{{ head.ogImage }}" />
-	<meta property="og:locale" content="{{ head.ogLocale }}" />
+	<meta property="og:url" content="{{ site.data.head.og.url }}" />
+	<meta property="og:type" content="{{ site.data.head.og.type }}" />
+	<meta property="og:site_name" content="{{ site.data.head.og.siteName }}" />
+	<meta property="og:title" content="{{ site.data.head.og.title }}" />
+	<meta property="og:description" content="{{ site.data.head.og.description }}" />
+	<meta property="og:image" content="{{ site.data.head.og.image }}" />
+	<meta property="og:locale" content="{{ site.data.head.og.locale }}" />
 
 	<!-- Apple touch icons -->
-	<link rel="apple-touch-icon" sizes="57x57" href="{{ head.appleTouchIcon57 }}">
-	<link rel="apple-touch-icon" sizes="114x114" href="{{ head.appleTouchIcon114 }}">
-	<link rel="apple-touch-icon" sizes="72x72" href="{{ head.appleTouchIcon72 }}">
-	<link rel="apple-touch-icon" sizes="60x60" href="{{ head.appleTouchIcon60 }}">
-	<link rel="apple-touch-icon" sizes="120x120" href="{{ head.appleTouchIcon120 }}">
-	<link rel="apple-touch-icon" sizes="76x76" href="{{ head.appleTouchIcon76 }}">
-	<link rel="apple-touch-icon" sizes="152x152" href="{{ head.appleTouchIcon152 }}">
-	<link rel="apple-touch-icon" sizes="180x180" href="{{ head.appleTouchIcon180 }}">
-    <meta name="apple-mobile-web-app-title" content="{{ head.webAppTitle }}">
+	<link rel="apple-touch-icon" sizes="57x57" href="{{ site.data.head.appleTouch.icon57 }}">
+	<link rel="apple-touch-icon" sizes="114x114" href="{{ site.data.head.appleTouch.icon114 }}">
+	<link rel="apple-touch-icon" sizes="72x72" href="{{ site.data.head.appleTouch.icon72 }}">
+	<link rel="apple-touch-icon" sizes="60x60" href="{{ site.data.head.appleTouch.icon60 }}">
+	<link rel="apple-touch-icon" sizes="120x120" href="{{ site.data.head.appleTouch.icon120 }}">
+	<link rel="apple-touch-icon" sizes="76x76" href="{{ site.data.head.appleTouch.icon76 }}">
+	<link rel="apple-touch-icon" sizes="152x152" href="{{ site.data.head.appleTouch.icon152 }}">
+	<link rel="apple-touch-icon" sizes="180x180" href="{{ site.data.head.appleTouch.icon180 }}">
+    <meta name="apple-mobile-web-app-title" content="{{ site.data.head.webAppTitle }}">
     
 	<!-- Favicon -->
-	<link rel="icon" type="image/png" href="{{ head.favicon192 }}" sizes="192x192">
-	<link rel="icon" type="image/png" href="{{ head.favicon96 }}" sizes="96x96">
-	<link rel="icon" type="image/png" href="{{ head.favicon16 }}" sizes="16x16">
-	<link rel="icon" type="image/png" href="{{ head.favicon32 }}" sizes="32x32">
+	<link rel="icon" type="image/png" href="{{ site.data.head.favicon192 }}" sizes="192x192">
+	<link rel="icon" type="image/png" href="{{ site.data.head.favicon96 }}" sizes="96x96">
+	<link rel="icon" type="image/png" href="{{ site.data.head.favicon16 }}" sizes="16x16">
+	<link rel="icon" type="image/png" href="{{ site.data.head.favicon32 }}" sizes="32x32">
 
     <link rel="stylesheet" href="css/main.css">
 </head>
