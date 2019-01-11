@@ -2,15 +2,12 @@
 
 ## Require
 
-- Jekyll ([https://jekyllrb.com/](https://jekyllrb.com/)):
+Jekyll ([https://jekyllrb.com/](https://jekyllrb.com/)):
 
-```
-$ gem install jekyll bundler
-```
+`gem install jekyll bundler`
 
-## Development
+## Setup
 
-```
-$ npm install
-$ npm start
-```
+- `npm install`
+- `npm start` for development mode
+- `npm run build` for production mode

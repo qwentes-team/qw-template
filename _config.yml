@@ -15,17 +15,10 @@ email: info@qwentes.it
 exclude:
   - node_modules
   - gulp
-  - vendor
-  - js/dev
   - Gemfile.old
   - Gemfile.lock.old
   - gulpfile.js
-  - mailer.php
   - package.json
-  - composer.json
-  - composer.lock
-  - composer.phar
-  - feed.xml
   - config.rb
   - README.md
   - webpack.config.js

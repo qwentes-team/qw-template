@@ -5,23 +5,23 @@ const browserSync = require('browser-sync');
 const runSequence = require('run-sequence');
 const webpack = require('webpack-stream');
 const spawn = require('child_process').spawn;
+const colors = require('colors');
 
-// RunSequence run tasks synchronous
-gulp.task('build-dev', function (callback) {
-  runSequence('webpack', 'jekyll', 'browser-sync', callback);
-});
+const env = process.env.NODE_ENV || 'development';
+const isProduction = () => env === 'production';
 
-gulp.task('build-watch', function (callback) {
+console.log(colors.green('ENVIRONMENT: ' + env));
+
+gulp.task('build', function (callback) {
   runSequence('webpack', 'jekyll', callback);
 });
 
-gulp.task('webpack', function() {
-  return gulp.src('./js/dev/script.js')
-    .pipe(webpack( require('./webpack.config.js') ))
+gulp.task('webpack', function () {
+  return gulp.src('./js/index.js')
+    .pipe(webpack(require('./webpack.config.js')))
     .pipe(gulp.dest('./js/prod/'));
 });
 
-// Build jekyll
 gulp.task('jekyll', function (gulpCallBack) {
   const jekyll = spawn('jekyll', ['build'], {stdio: 'inherit'});
   jekyll.on('exit', function (code) {
@@ -29,33 +29,27 @@ gulp.task('jekyll', function (gulpCallBack) {
   });
 });
 
-// Rebuild Jekyll & do page reload
-gulp.task('jekyll-rebuild', ['build-watch'], function () {
+gulp.task('jekyll-rebuild', ['build'], function () {
   browserSync.notify('Building Jekyll');
   browserSync.reload();
 });
 
-// Wait for jekyll-build, then launch the Server
 gulp.task('browser-sync', function () {
   browserSync({
-    server: {
-      baseDir: '_site'
-    },
+    server: {baseDir: '_site'},
     host: 'localhost'
   });
 });
 
-// Watch
 gulp.task('watch', function () {
-  // Watch .scss files
-  gulp.watch('_sass/**.scss', ['jekyll-rebuild']);
-  // Watch .js files
-  gulp.watch('js/dev/**.js', ['jekyll-rebuild']);
-  // Watch .html files and posts
+  console.log('watch!');
+  gulp.watch(['_sass/**.scss', 'css/main.scss'], ['jekyll-rebuild']);
+  gulp.watch('js/**.js', ['jekyll-rebuild']);
   gulp.watch(['index.html', '_includes/*.html', '_layouts/*.html', '*.md', '_posts/*'], ['jekyll-rebuild']);
 });
 
-// Define default tasks for gulp
-gulp.task('default', function () {
-  gulp.start('watch', ['build-dev']);
+gulp.task('default', function (callback) {
+  isProduction()
+    ? gulp.start('build')
+    : runSequence('build', 'browser-sync', 'watch', callback);
 });
