@@ -65,6 +65,11 @@
     $screen-xs-max: 768px;
     $screen-xxs-max: 460px;
 
+    // Set transition variables globally
+    $qw-velocity-sm: 0.1s;
+    $qw-velocity-md: 0.3s;
+    $qw-velocity-lg: 0.7s;
+
     @mixin largeDesktop {
         @media only screen and (max-width: #{$screen-xm-max}) {
             @content;

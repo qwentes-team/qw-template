@@ -6,16 +6,24 @@
     width: 100%;
     height: auto;
     position: relative;
+    .grid-item {
+        display: block;
+        flex-basis: 100%;
+        margin-bottom: $qw-gap-lg;
+    }
     .grid-item-2 {
         display: block;
         flex-basis: 49%;
+        margin-bottom: $qw-gap-lg;
     }
     .grid-item-3 {
         display: block;
         flex-basis: 32%;
+        margin-bottom: $qw-gap-lg;
     }
     .grid-item-4 {
         display: block;
         flex-basis: 24%;
+        margin-bottom: $qw-gap-lg;
     }
 }

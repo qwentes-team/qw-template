@@ -1,22 +1,15 @@
-var Util = (function() {
 
-    function element(selector) {
+
+export default class Util {
+    static element(selector) {
         return document.querySelector(selector);
     }
 
-    function elements(selectors) {
+    static elements(selectors) {
         return document.querySelectorAll(selectors);
     }
 
-    function create(elem) {
+    static create(elem) {
         return document.createElement(elem)
     }
-
-    return {
-        el: element,
-        els: elements,
-        create: create
-    }
-})();
-
-module.exports = Util;
+}

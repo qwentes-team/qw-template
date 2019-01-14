@@ -1,0 +1,21 @@
+footer {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: $qw-gap-xl $qw-gap-lg;
+    .footer__sitemap {
+    }
+    .footer__contacts {
+    }
+    .footer__copyright {
+    }
+}
+.footer__newsletter {
+    label {
+        display: block;
+    }
+    input {
+        outline: none;
+        box-shadow: none;
+    }
+}

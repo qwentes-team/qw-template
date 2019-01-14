@@ -1,8 +1,9 @@
-console.log('Template qw');
-var Util = require('./util.js');
-var header = require('./header.js');
+import Util from './util.js';
+import Header from './header.js';
 
 document.addEventListener("DOMContentLoaded", function () {
-    console.log('Your document is ready!');
-
+    const navBar = Util.element('.navbar');
+    navBar.addEventListener('click', () => {
+        Header.toggleMenu(navBar);
+    });
 });

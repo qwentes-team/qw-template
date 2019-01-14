@@ -15,7 +15,6 @@
             height: auto;
         }
     }
-
     .navbar {
         position: relative;
         display: block;
@@ -53,7 +52,7 @@
                 height: 3px;
                 background: $qw-primary-dark;
                 border-radius: $qw-border-radius-sm;
-                transition: transform 0.2s ease-in-out, background 0.1s ease-in-out;
+                transition: transform $qw-velocity-md ease-in-out, background $qw-velocity-sm ease-in-out;
                 //Hamburger line spacing
                 &:nth-child(2) {
                     margin: $qw-gap-xs 0;
@@ -64,6 +63,7 @@
             }
         }
         &.open-menu {
+            //change hambureger icon to X
             .navbar__icon-menu span {
                 &:first-child {
                     transform: rotate(45deg) translate(6px, 4px);
@@ -77,6 +77,7 @@
                     transform: rotate(-45deg) translate(6px, -4px);
                 }
             }
+            //on click open also the mobile menu, placed after desktop menu
             +.navbar-mobile {
                 @include tablet {
                     display: block;
