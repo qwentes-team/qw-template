@@ -1,0 +1,10 @@
+section {
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    padding: $qw-border-radius-xl;
+}
