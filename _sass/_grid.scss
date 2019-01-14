@@ -1,0 +1,21 @@
+.grid-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    position: relative;
+    .grid-item-2 {
+        display: block;
+        flex-basis: 49%;
+    }
+    .grid-item-3 {
+        display: block;
+        flex-basis: 32%;
+    }
+    .grid-item-4 {
+        display: block;
+        flex-basis: 24%;
+    }
+}

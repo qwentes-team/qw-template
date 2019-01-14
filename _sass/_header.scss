@@ -2,6 +2,7 @@
     width: $qw-width-full;
     height: auto;
     position: relative;
+
     .header__logo {
         position: relative;
         cursor: pointer;
@@ -20,14 +21,17 @@
         display: block;
         width: auto;
         height: auto;
+
         .navbar__menu {
             position: relative;
             width: auto;
             height: auto;
+
             ul {
                 padding-left: 0;
                 list-style: none;
                 display: inline-block;
+
                 li {
                     display: inline-block;
                     padding: $qw-gap-sm;
@@ -36,37 +40,51 @@
         }
         .navbar__icon-menu {
             display: none;
-            .icon-menu__hamburger {
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            flex-flow: column wrap;
+            width: 30px;
+            height: auto;
+            span {
                 position: relative;
                 display: block;
-                width: 25px;
+                width: 100%;
                 height: 3px;
-                background-color: $qw-primary-dark;
+                background: $qw-primary-dark;
                 border-radius: $qw-border-radius-sm;
-                &:before {
-                    content: "";
-                    display: block;
-                    position: absolute;
-                    width: 100%;
-                    height: 100%;
-                    background-color: $qw-primary-dark;
-                    border-radius: $qw-border-radius-sm;
-                    transform: translateY(-200%)
-                }
-                &:after {
-                    content: "";
-                    display: block;
-                    position: absolute;
-                    width: 100%;
-                    height: 100%;
-                    background-color: $qw-primary-dark;
-                    border-radius: $qw-border-radius-sm;
-                    transform: translateY(200%)
+                transition: transform 0.2s ease-in-out, background 0.1s ease-in-out;
+                //Hamburger line spacing
+                &:nth-child(2) {
+                    margin: $qw-gap-xs 0;
                 }
             }
             @include tablet {
-                display: block;
+                display: flex;
             }
         }
+        &.open-menu {
+            .navbar__icon-menu span {
+                &:first-child {
+                    transform: rotate(45deg) translate(6px, 4px);
+                }
+    
+                &:nth-child(2) {
+                    background: transparent;
+                }
+    
+                &:last-child {
+                    transform: rotate(-45deg) translate(6px, -4px);
+                }
+            }
+            +.navbar-mobile {
+                @include tablet {
+                    display: block;
+                }
+            }
+        }
+    }
+    .navbar-mobile {
+        display: none;
     }
 }
