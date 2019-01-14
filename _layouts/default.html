@@ -4,6 +4,12 @@
     <body>
         {% include header/header-basic.html %}
         {{ content }}
+        <div class="grid-container grid-col-four">
+                {% include card.html %}
+                {% include card.html %}
+                {% include card.html %}
+                {% include card.html %}
+        </div>
         {% include footer/footer-basic.html %}
     </body> 
     <script src="js/prod/bundle.js"></script>
