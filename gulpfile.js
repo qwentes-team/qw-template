@@ -6,6 +6,7 @@ const runSequence = require('run-sequence');
 const webpack = require('webpack-stream');
 const spawn = require('child_process').spawn;
 const colors = require('colors');
+const plumber = require('gulp-plumber');
 
 const env = process.env.NODE_ENV || 'development';
 const isProduction = () => env === 'production';
@@ -18,6 +19,7 @@ gulp.task('build', function (callback) {
 
 gulp.task('webpack', function () {
   return gulp.src('./js/index.js')
+    .pipe(plumber())
     .pipe(webpack(require('./webpack.config.js')))
     .pipe(gulp.dest('./js/prod/'));
 });
