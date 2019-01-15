@@ -17,26 +17,8 @@ document.addEventListener("DOMContentLoaded", function () {
     if (window.innerWidth < 600) {
         Header.fixElementOnScroll(mainMenu, mainTopLimit, 'fixed-header');
     }
-    // //MENU MOBILE BEHAVIOR
-    // const menuMobile = document.querySelector('.menu-mobile');
-    // const menuTitle = document.querySelector('.menu-hamburger p');
-    // const menuButton = document.querySelector('.menu-hamburger');
 
-    // menuButton.addEventListener('click', () => {
-    //     menuMobile.classList.toggle('slide-down');
-    //     menuButton.classList.toggle('menu-open');
-    //     if (menuTitle.innerHTML == 'Menu') {
-    //         document.body.classList.add('no-scroll');
-    //         menuTitle.innerHTML = 'Chiudi';
-    //         header.checkScrollMobile(menuMobile, mainMenu);
-    //     } else {
-    //         menuTitle.innerHTML = 'Menu';
-    //         document.body.classList.remove('no-scroll');
-    //         header.checkScrollMobile(menuMobile, mainMenu);
-    //     }
-    // })
-
-    //slider
+    //INITIATE SLIDER AND PROGRESS BAR RELATED
     const options = {
         cellAlign: 'center',
         contain: true,
