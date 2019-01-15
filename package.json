@@ -19,5 +19,8 @@
     "webpack": "^4.28.4",
     "webpack-cli": "^3.2.1",
     "webpack-stream": "^5.2.1"
+  },
+  "dependencies": {
+    "flickity": "^2.1.2"
   }
 }

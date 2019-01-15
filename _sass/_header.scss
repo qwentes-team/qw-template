@@ -3,6 +3,7 @@
     height: auto;
     position: relative;
     background-color: $qw-primary-light;
+    transition: all 0.5s ease-in-out;
     .header__logo {
         position: relative;
         cursor: pointer;
@@ -87,5 +88,10 @@
     }
     .navbar-mobile {
         display: none;
+    }
+    &.fixed-header {
+        position: fixed;
+        top: 0;
+        background-color: $qw-primary-dark;
     }
 }
