@@ -1,8 +1,8 @@
 export default class Header {
-  constructor() {}
   static toggleMenu(menuButton) {
     menuButton.classList.toggle('open-menu');
   }
+
   static fixElementOnScroll(el, anchor, classe) {
     window.addEventListener('scroll', () => {
       const mainMenuAnchor = anchor.getBoundingClientRect().top;

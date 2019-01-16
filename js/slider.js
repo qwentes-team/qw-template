@@ -24,10 +24,10 @@ export default class Slider {
     this._resetProgressbar(bar);
     this.percentTime = 0;
     this.isPaused = false;
-    this.tick = window.setInterval(() => this._increase(interval, duration, bar), interval);
+    this.tick = window.setInterval(() => this._increaseProgressbar(interval, duration, bar), interval);
   }
 
-  _increase(interval, duration, bar) {
+  _increaseProgressbar(interval, duration, bar) {
     if (!this.isPaused) {
       const step = (duration * 1000) / interval;
       this.percentTime += 100 / step;
