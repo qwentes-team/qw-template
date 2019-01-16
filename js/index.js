@@ -25,16 +25,18 @@ document.addEventListener('DOMContentLoaded', function() {
     draggable: true,
     wrapAround: true
   };
-  const testSlider = Slider.create('.test-carousel', options);
+  const testSlider = new Slider('.test-carousel', options);
   const sliderStatus = Util.element('.test-carousel-status');
-  Slider.updateStatus(testSlider, sliderStatus);
+  testSlider.updateStatus(sliderStatus);
 
-  testSlider.on('select', () => {
-    Slider.updateStatus(testSlider, sliderStatus);
+  testSlider.slider.on('select', () => {
+    testSlider.updateStatus(sliderStatus);
   });
-  var duration = 4;
-  var interval = 10;
-  var sliderWrapper = Util.element('.test-carousel');
-  var progressBar = Util.element('.progress');
-  Slider.progressBar(sliderWrapper, testSlider, duration, interval, progressBar);
+
+  const duration = 4;
+  const interval = 10;
+  const sliderWrapper = Util.element('.test-carousel');
+  const progressBar = Util.element('.progress');
+
+  testSlider.progressBar(sliderWrapper, duration, interval, progressBar);
 });

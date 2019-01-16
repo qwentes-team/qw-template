@@ -1,47 +1,46 @@
-const Flickity = require('flickity');
+import Flickity from 'flickity';
 import Util from './util.js';
 
 export default class Slider {
-  constructor() {}
-  static create(element, options) {
-    return new Flickity(Util.element(element), options);
+  constructor(element, options) {
+    this.element = element;
+    this.options = options;
+    this.slider = new Flickity(Util.element(this.element), this.options);
+    this.isPaused = false;
   }
 
-  static updateStatus(slider, sliderStatus) {
-    var slideNumber = slider.selectedIndex + 1;
-    sliderStatus.textContent = '0' + slideNumber;
+  updateStatus(sliderStatus) {
+    sliderStatus.textContent = this.slider.selectedIndex + 1;
   }
-  static progressBar(sliderWrapper, flkty, duration, interval, progressBar) {
-    // Pause control
-    let isPaused = false;
-    sliderWrapper.addEventListener('mouseenter', function() {
-      isPaused = true;
-    });
-    sliderWrapper.addEventListener('mouseleave', function() {
-      isPaused = false;
-    });
-    let percentTime, step, tick;
-    function startProgressbar() {
-      resetProgressbar();
-      percentTime = 0;
-      isPaused = false;
-      tick = window.setInterval(increase, interval);
-    }
-    function increase() {
-      if (!isPaused) {
-        step = (duration * 1000) / interval;
-        percentTime += 100 / step;
-        progressBar.style.width = percentTime + '%';
-        if (percentTime >= 100) {
-          flkty.next();
-          startProgressbar();
-        }
+
+  progressBar(sliderWrapper, duration, interval, bar) {
+    sliderWrapper.addEventListener('mouseenter', () => (this.isPaused = true));
+    sliderWrapper.addEventListener('mouseleave', () => (this.isPaused = false));
+
+    this._startProgressbar(duration, interval, bar);
+  }
+
+  _startProgressbar(duration, interval, bar) {
+    this._resetProgressbar(bar);
+    this.percentTime = 0;
+    this.isPaused = false;
+    this.tick = window.setInterval(() => this._increase(interval, duration, bar), interval);
+  }
+
+  _increase(interval, duration, bar) {
+    if (!this.isPaused) {
+      const step = (duration * 1000) / interval;
+      this.percentTime += 100 / step;
+      bar.style.width = this.percentTime + '%';
+      if (this.percentTime >= 100) {
+        this.slider.next();
+        this._startProgressbar(interval, duration, bar);
       }
     }
-    function resetProgressbar() {
-      progressBar.style.width = 0 + '%';
-      clearTimeout(tick);
-    }
-    startProgressbar();
+  }
+
+  _resetProgressbar(bar) {
+    clearTimeout(this.tick);
+    bar.style.width = 0 + '%';
   }
 }
