@@ -3,19 +3,13 @@ import Header from './header.js';
 import Slider from './slider.js';
 
 document.addEventListener('DOMContentLoaded', function() {
-  const navBar = Util.element('.navbar');
-  navBar.addEventListener('click', () => {
-    Header.toggleMenu(navBar);
-  });
-  const mainMenu = document.querySelector('header');
+  const navBarOpen = Util.element('.navbar__icon-menu');
+  const navBarClose = Util.element('.menu__icon-close');
+  const menu = Util.element('.menu');
 
-  //FIXED MENU ON SCROLL
-  const mainTopLimit = document.querySelector('body');
-  if (window.innerWidth > 600 && mainTopLimit) {
-    Header.fixElementOnScroll(mainMenu, mainTopLimit, 'fixed-header');
-  }
-  if (window.innerWidth < 600) {
-    Header.fixElementOnScroll(mainMenu, mainTopLimit, 'fixed-header');
+  if (menu) {
+    navBarOpen.addEventListener('click', () => Header.toggleMenu(menu));
+    navBarClose.addEventListener('click', () => Header.toggleMenu(menu));
   }
 
   //INITIATE SLIDER AND PROGRESS BAR RELATED
