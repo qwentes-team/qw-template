@@ -8,4 +8,4 @@ vendor/
 .idea
 package-lock.json
 js/bundle.js
-js/bundle.map.js
+js/bundle.js.map
