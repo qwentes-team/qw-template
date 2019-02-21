@@ -7,4 +7,5 @@ node_modules/
 vendor/
 .idea
 package-lock.json
-js/prod
+js/bundle.js
+js/bundle.map.js
