@@ -1,0 +1,36 @@
+.carousel {
+  &-wrapper {
+    margin-bottom: $qw-gap-xl;
+  }
+  
+  &-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 400px;
+    background-color: $qw-neutral-medium;
+    &:nth-child(odd) {
+      background-color: $qw-neutral-regular;
+    }
+  }
+  
+  &-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 8px;
+    border-radius: 4px;
+    width: 0%;
+    background-color: $qw-neutral-regular;
+  }
+}
+
+.progress-wrapper {
+  position: relative;
+  margin: 0 auto;
+  width: 66%;
+  height: 8px;
+  border-radius: 4px;
+  background-color: $qw-neutral-medium;
+}

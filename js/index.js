@@ -1,36 +1,35 @@
 import Util from './util.js';
-import Header from './header.js';
-import Slider from './slider.js';
+import Carousel from './carousel.js';
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu();
+  initCarousel();
+});
+
+function initMenu() {
   const navBarOpen = Util.element('.navbar__icon-menu');
   const navBarClose = Util.element('.menu__icon-close');
   const menu = Util.element('.menu');
 
   if (menu) {
-    navBarOpen.addEventListener('click', () => Header.toggleMenu(menu));
-    navBarClose.addEventListener('click', () => Header.toggleMenu(menu));
+    navBarOpen.addEventListener('click', () => menu.classList.toggle('is-open'));
+    navBarClose.addEventListener('click', () => menu.classList.toggle('is-open'));
   }
+}
 
-  //INITIATE SLIDER AND PROGRESS BAR RELATED
+function initCarousel() {
   const options = {
     cellAlign: 'center',
     contain: true,
     draggable: true,
     wrapAround: true
   };
-  const testSlider = new Slider('.test-carousel', options);
-  const sliderStatus = Util.element('.test-carousel-status');
-  testSlider.updateStatus(sliderStatus);
 
-  testSlider.slider.on('select', () => {
-    testSlider.updateStatus(sliderStatus);
-  });
+  const testCarousel = '.test-carousel';
+  const testCarouselProgressBarSelector = '.carousel-progress';
+  const testCarouselInstance = new Carousel(testCarousel, options, testCarouselProgressBarSelector);
+  testCarouselInstance.flickityInstance.on('select', () => testCarouselInstance.startProgressbar());
 
-  const duration = 4;
-  const interval = 10;
-  const sliderWrapper = Util.element('.test-carousel');
-  const progressBar = Util.element('.progress');
-
-  testSlider.progressBar(sliderWrapper, duration, interval, progressBar);
-});
+  const testCarousel2 = '.test-carousel-no-progressbar';
+  new Carousel(testCarousel2, { ...options, autoPlay: true });
+}
