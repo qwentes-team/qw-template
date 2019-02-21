@@ -1,5 +1,5 @@
 import Flickity from 'flickity';
-import Util from './util.js';
+import { Util } from '../../shared/util';
 
 export default class Carousel {
   constructor(elementSelector, options = {}, progressBarSelector = '.no-selector') {
@@ -44,5 +44,14 @@ export default class Carousel {
   _resetProgressbar() {
     clearTimeout(this.tick);
     this.progressBarElement.style.width = 0 + '%';
+  }
+
+  static getBaseOptions() {
+    return {
+      cellAlign: 'center',
+      contain: true,
+      draggable: true,
+      wrapAround: true
+    };
   }
 }

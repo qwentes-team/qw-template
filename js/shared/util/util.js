@@ -1,4 +1,4 @@
-export default class Util {
+export class Util {
   static element(selector) {
     return document.querySelector(selector);
   }
