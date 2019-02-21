@@ -1,5 +1,6 @@
 .menu {
   display: flex;
+  flex-flow: column;
   z-index: 3;
   position: absolute;
   top: 0;
@@ -15,7 +16,6 @@
   &__icon-close {
     display: inline-flex;
     align-items: center;
-    padding: 40px 0 $qw-gap-md 0;
     height: $qw-primary-cta-mobile-bar;
     
     &__icon {

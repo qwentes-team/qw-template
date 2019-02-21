@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="3px" viewBox="0 0 22 3" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.3 (67297) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon/set/left-arrow-2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M1.49421974,10.0042344 L20.6524469,10.0042344 C21.2071465,10.0042344 21.6577778,10.4549253 21.6577778,11.0095652 C21.6577778,11.5642052 21.2071465,12.0148961 20.6524469,12.0148961 L1.49421974,12.0148961 C0.939520146,12.0148961 0.488888889,11.5642052 0.488888889,11.0095652 C0.488888889,10.4549253 0.939520146,10.0042344 1.49421974,10.0042344 Z" id="path-1"></path>
+    </defs>
+    <g id="___-13---Find-Us" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1_Find-Us" transform="translate(-896.000000, -1188.000000)">
+            <g id="By-Air" transform="translate(88.000000, 1140.000000)">
+                <g id="Icon/set/minus" transform="translate(819.000000, 49.000000) scale(-1, -1) rotate(-180.000000) translate(-819.000000, -49.000000) translate(808.000000, 38.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="Mask" fill="#181715" fill-rule="nonzero" xlink:href="#path-1"></use>
+                    <g id="Colors/Neutral/Dark-#181715" mask="url(#mask-2)" fill="#181715" fill-rule="evenodd">
+                        <rect id="Rectangle-12" x="0" y="0" width="22" height="22"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

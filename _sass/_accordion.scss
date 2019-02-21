@@ -1,0 +1,126 @@
+.accordion {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  
+  a {
+    color: $qw-neutral-medium;
+  }
+  
+  @include tablet {
+    max-width: none;
+  }
+  
+  &__header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $qw-gap-sm 0 $qw-gap-lg;
+  }
+  
+  &__label {
+    a {
+      font-weight: 400;
+    }
+    
+    &--big {
+      font-family: $qw-font-family;
+      font-size: $qw-font-size;
+      color: $qw-neutral-medium;
+      letter-spacing: 3.5px;
+      padding: $qw-gap-md 0;
+      
+      @include mobile {
+        font-size: $qw-font-size-small;
+        padding: 0;
+      }
+    }
+  }
+  
+  &__arrow svg {
+    transform: rotate(180deg);
+    transition: transform .3s ease;
+    
+    circle {
+      stroke: transparent;
+      fill: transparent;
+    }
+    
+    path {
+      stroke: $qw-primary-dark;
+    }
+  }
+  
+  &__minus-plus {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 22px;
+  }
+  
+  &__minus {
+    display: none;
+  }
+  
+  &__plus {
+    display: block;
+  }
+  
+  &__content {
+    display: none;
+    padding-top: $qw-gap-md;
+    
+    h3 {
+      margin: $qw-gap-md 0;
+    }
+    
+    p {
+      text-align: left;
+    }
+    
+    &--list {
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      list-style-type: none;
+    }
+    
+    &--item {
+      padding: $qw-gap-sm 0;
+      border-bottom: 1px solid $qw-primary-dark;
+    }
+  }
+}
+
+.accordion.is-open > .accordion__content {
+  display: flex;
+  flex-flow: column;
+}
+
+.accordion.is-open > .accordion__header {
+  border-bottom: 1px solid $qw-primary-light;
+}
+
+.accordion.is-open > .accordion__header > .accordion__minus-plus > .accordion__plus {
+  display: none;
+}
+
+.accordion.is-open > .accordion__header > .accordion__minus-plus > .accordion__minus {
+  display: block;
+}
+
+.accordion.is-open > .accordion__header > .accordion__arrow {
+  svg {
+    transform: rotate(0);
+    
+    circle {
+      stroke: $qw-primary-dark;
+      fill: $qw-primary-dark;
+    }
+    
+    path {
+      stroke: #FFFFFF;
+    }
+  }
+}
