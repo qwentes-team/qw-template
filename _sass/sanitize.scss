@@ -14,44 +14,29 @@ menu,
 nav,
 section,
 summary {
-	display: block;
+  display: block;
 }
 
 /* Elements of HTML (https://www.w3.org/TR/html5/semantics.html)
    ========================================================================== */
 
-*,
-::before,
-::after {
-	background-repeat: no-repeat;
-	box-sizing: inherit;
+* {
+  box-sizing: border-box;
 }
 
 ::before,
 ::after {
-	text-decoration: inherit;
-	vertical-align: inherit;
-}
-
-html {
-	box-sizing: border-box;
-	cursor: default;
-	font-family: sans-serif;
-	line-height: 1.5;
-	-ms-text-size-adjust: 100%;
-	-webkit-text-size-adjust: 100%;
+  text-decoration: inherit;
+  vertical-align: inherit;
 }
 
 /* Sections (https://www.w3.org/TR/html5/sections.html)
    ========================================================================== */
 
 body {
-	margin: 0;
-}
-
-h1 {
-	font-size: 2em;
-	margin: .67em 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: $qw-font-family;
 }
 
 /* Grouping content (https://www.w3.org/TR/html5/grouping-content.html)
@@ -59,32 +44,14 @@ h1 {
 
 nav ol,
 nav ul {
-	list-style: none;
+  list-style: none;
 }
 
 /* Text-level semantics
    ========================================================================== */
 
-b,
-strong {
-	font-weight: inherit;
-}
-
-b,
-strong {
-	font-weight: bolder;
-}
-
-dfn {
-	font-style: italic;
-}
-
-progress {
-	vertical-align: baseline;
-}
-
 small {
-	font-size: 83.3333%;
+  font-size: 83.3333%;
 }
 
 /* Embedded content (https://www.w3.org/TR/html5/embedded-content-0.html)
@@ -96,31 +63,31 @@ iframe,
 img,
 svg,
 video {
-	vertical-align: middle;
+  vertical-align: middle;
 }
 
 img {
-	border-style: none;
+  border-style: none;
 }
 
 svg {
-	fill: currentColor;
+  fill: currentColor;
 }
 
 svg:not(:root) {
-	overflow: hidden;
+  overflow: hidden;
 }
 
 /* Links (https://www.w3.org/TR/html5/links.html#links)
    ========================================================================== */
 
 a {
-	background-color: transparent;
-	-webkit-text-decoration-skip: objects;
+  background-color: transparent;
+  text-decoration: none;
 }
 
 :hover {
-	outline-width: 0;
+  outline-width: 0;
 }
 
 
@@ -131,87 +98,87 @@ button,
 input,
 select,
 textarea {
-	background-color: transparent;
-	border-style: none;
-	color: inherit;
-	font-size: 1em;
-	margin: 0;
+  background-color: transparent;
+  border-style: none;
+  color: inherit;
+  font-size: 1em;
+  margin: 0;
 }
 
 button,
 input {
-	overflow: visible;
+  overflow: visible;
 }
 
 button,
 select {
-	text-transform: none;
+  text-transform: none;
 }
 
 button,
 html [type="button"],
 [type="reset"],
 [type="submit"] {
-	-webkit-appearance: button;
+  -webkit-appearance: button;
 }
 
 ::-moz-focus-inner {
-	border-style: none;
-	padding: 0;
+  border-style: none;
+  padding: 0;
 }
 
 :-moz-focusring {
-	outline: 1px dotted ButtonText;
+  outline: 1px dotted ButtonText;
 }
 
 textarea {
-	overflow: auto;
-	resize: vertical;
+  overflow: auto;
+  resize: vertical;
 }
 
 [type="checkbox"],
 [type="radio"] {
-	padding: 0;
+  padding: 0;
 }
 
 ::-webkit-inner-spin-button,
 ::-webkit-outer-spin-button {
-	height: auto;
+  height: auto;
 }
 
 [type="search"] {
-	-webkit-appearance: textfield;
-	outline-offset: -2px;
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
 }
 
 ::-webkit-search-cancel-button,
 ::-webkit-search-decoration {
-	-webkit-appearance: none;
+  -webkit-appearance: none;
 }
 
 ::-webkit-input-placeholder {
-	color: inherit;
-	opacity: .54;
+  color: inherit;
+  opacity: .54;
 }
 
 ::-webkit-file-upload-button {
-	-webkit-appearance: button;
-	font: inherit;
+  -webkit-appearance: button;
+  font: inherit;
 }
 
 /* WAI-ARIA (https://www.w3.org/TR/html5/dom.html#wai-aria)
    ========================================================================== */
 
 [aria-busy="true"] {
-	cursor: progress;
+  cursor: progress;
 }
 
 [aria-controls] {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 [aria-disabled] {
-	cursor: default;
+  cursor: default;
 }
 
 /* User interaction (https://www.w3.org/TR/html5/editing.html)
@@ -225,16 +192,16 @@ label,
 select,
 textarea,
 [tabindex] {
-	-ms-touch-action: manipulation; 
-	touch-action: manipulation;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
 }
 
 [hidden][aria-hidden="false"] {
-	clip: rect(0, 0, 0, 0);
-	display: inherit;
-	position: absolute;
+  clip: rect(0, 0, 0, 0);
+  display: inherit;
+  position: absolute;
 }
 
 [hidden][aria-hidden="false"]:focus {
-	clip: auto;
+  clip: auto;
 }
